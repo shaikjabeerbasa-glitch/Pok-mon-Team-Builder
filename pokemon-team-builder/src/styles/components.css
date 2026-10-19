@@ -1,0 +1,188 @@
+.type-fire {
+  background: #ffebe3;
+  color: #aa4b25;
+}
+.type-water {
+  background: #e2f0ff;
+  color: #306ba8;
+}
+.type-grass {
+  background: #e7f3df;
+  color: #517936;
+}
+.type-electric {
+  background: #fff3c8;
+  color: #876e18;
+}
+.type-poison {
+  background: #f0e4fa;
+  color: #8655a0;
+}
+.type-flying {
+  background: #eaeafb;
+  color: #63659b;
+}
+.type-bug {
+  background: #eff3d8;
+  color: #6b7b2f;
+}
+.type-ground {
+  background: #f7eddc;
+  color: #977443;
+}
+.type-rock {
+  background: #ede9df;
+  color: #7c7053;
+}
+.type-ice {
+  background: #dff5f6;
+  color: #377e83;
+}
+.type-fighting {
+  background: #f9e2df;
+  color: #a14d46;
+}
+.type-psychic {
+  background: #ffe3ed;
+  color: #a94d70;
+}
+.type-ghost {
+  background: #eae4f6;
+  color: #6e568b;
+}
+.type-dragon {
+  background: #e8e0ff;
+  color: #6850a3;
+}
+.type-dark {
+  background: #e8e4e1;
+  color: #675c55;
+}
+.type-steel {
+  background: #e5edf0;
+  color: #62767e;
+}
+.type-fairy {
+  background: #fae4f5;
+  color: #a56598;
+}
+.details-dialog {
+  padding: 0;
+  border: 1px solid #e0e5ec;
+  border-radius: 20px;
+  max-width: 460px;
+  width: calc(100% - 30px);
+  max-height: 90vh;
+  color: #203047;
+  box-shadow: 0 20px 90px #14243b44;
+}
+.details-dialog::backdrop {
+  background: #16243d88;
+  backdrop-filter: blur(4px);
+}
+.details-inner {
+  padding: 27px;
+  position: relative;
+}
+.details-inner h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.close-button {
+  position: absolute;
+  right: 16px;
+  top: 15px;
+  background: #f2f5f8;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+}
+.detail-hero {
+  text-align: center;
+  padding: 12px 0 20px;
+}
+.detail-hero .large {
+  display: block;
+  width: 160px;
+  height: 150px;
+  margin: auto;
+  background: radial-gradient(ellipse, #f2f5f7, transparent 65%);
+}
+.detail-hero h3 {
+  font-size: 28px;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+.detail-hero .type-breakdown {
+  justify-content: center;
+}
+.measurements {
+  display: flex;
+  background: #f6f8fb;
+  border-radius: 10px;
+  padding: 15px;
+  gap: 20px;
+  margin-bottom: 23px;
+}
+.measurements > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.measurements span {
+  font-size: 10px;
+  color: #8793a3;
+}
+.measurements strong {
+  font-size: 16px;
+}
+.details-inner h4 {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+.stat {
+  display: grid;
+  grid-template-columns: 82px 30px 1fr;
+  gap: 12px;
+  align-items: center;
+  font-size: 11px;
+  margin: 12px 0;
+}
+.stat > span {
+  color: #7b8797;
+}
+.stat > strong {
+  text-align: right;
+}
+.stat meter {
+  width: 100%;
+  height: 12px;
+  appearance: none;
+}
+.stat meter::-webkit-meter-bar {
+  background: #edf0f5;
+  border: 0;
+  border-radius: 8px;
+}
+.stat meter::-webkit-meter-optimum-value {
+  background: #7e9fc9;
+  border-radius: 8px;
+}
+.stat meter::-moz-meter-bar {
+  background: #7e9fc9;
+  border-radius: 8px;
+}
+.detail-add {
+  width: 100%;
+  margin-top: 20px;
+}
+.detail-notice {
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.6;
+  color: #576c84;
+  margin-top: 12px;
+}

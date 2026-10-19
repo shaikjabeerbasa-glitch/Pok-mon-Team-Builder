@@ -1,0 +1,15 @@
+# Learning walkthrough by phase
+
+1. **Setup:** Vite React JavaScript project, package scripts, `main.jsx`, metadata, and base styles. Verified installed dependencies, development server startup, production build, and lint.
+2. **Component layout:** Created Header, SearchBar, Grid/Card, Details, Pagination, Team/TeamMember, Loading, ErrorMessage, and shared PokemonImage. Function components compose the UI; props pass data and callbacks. Initial lint surfaced a mixed constant/component export, which was fixed by keeping the constant internal.
+3. **Browse/API:** Added `services/pokemonApi.js` and the browse effect in App. Native async fetch validates HTTP status; `.map()` renders cards using numeric IDs as keys. Browser verification confirmed 20 cards and loaded sprites.
+4. **Pagination:** Page state becomes API offset `(page - 1) * 20`; controls derive disabled states. Browser verification confirmed both directions and the first-page restriction.
+5. **Search:** Controlled input and normalized query state separate typing from fetching. Timer cleanup implements debounce; request cleanup prevents stale results. Browser verification covered name, case, whitespace, numeric ID, 404, clear, and stale response behavior.
+6. **Details:** Selection state triggers an independent request. A native dialog handles modal focus; nested API fields render types and stats. Browser verification checked all six bars, metric conversion, and dismissal.
+7. **Team:** Shared team state lives in App so paging/search cannot replace it. Add uses spread and a functional update; removal uses filter. Browser verification covered six members, duplicates, seventh-member blocking, and removal.
+8. **Errors/loading:** Try/catch/finally controls independent browse/detail/add request states. Accessible status/error components show feedback and retry. Browser verification simulated network failure, delayed responses, and failed sprites.
+9. **Stretch features:** Type results are cached and paginated; persistence validates saved data; type counts are derived from the team. Browser verification checked filtering, reload persistence, and corrupt data. Search debounce and type colours are complete.
+10. **Responsive design:** `App.css`, `index.css`, and `styles/components.css` provide the navy/yellow/red palette, CSS Poké Ball illustration, cards, animations, breakpoints, focus rings, and reduced motion. Browser checks found no overflow at four mobile/tablet widths; screenshots were inspected.
+11. **Verification/docs:** Build and lint passed after formatting. README explains setup, architecture, API trade-offs, challenges and future work; TESTING records executed checks and limitations; screenshots are included. Public repository/live demo links remain placeholders until publication is requested.
+
+The integrated interface was checked after its styles were connected; the intermediate build's missing stylesheet import was corrected. See TESTING.md for exact observed results rather than treating component creation as proof of user-facing behavior.
