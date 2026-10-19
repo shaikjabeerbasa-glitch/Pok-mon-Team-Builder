@@ -103,3 +103,17 @@ See [TESTING.md](TESTING.md) for executed checks and a manual checklist. Product
 - Live demo: **TODO — add your deployment URL**
 
 No repository push or deployment is performed automatically. Pokémon names and sprites belong to their respective owners. Data is supplied by [PokéAPI](https://pokeapi.co/).
+
+## Continuous integration
+
+The repository-root `.github/workflows/ci.yml` runs on pushes, pull requests, and manual dispatch. It uses Ubuntu and Node.js 24, installs locked dependencies with `npm ci`, runs `npm run lint -- --deny-warnings`, and builds the production bundle. Commands run inside `pokemon-team-builder/`; npm caching uses that folder's lockfile. No secrets or deployment permissions are required.
+
+To reproduce the checks locally, run these commands from `pokemon-team-builder/`:
+
+```sh
+npm ci
+npm run lint -- --deny-warnings
+npm run build
+```
+
+View hosted results in the repository's **Actions → CI** tab after the workflow is pushed. CI currently checks lint and build; the browser verification documented in TESTING.md is separate.

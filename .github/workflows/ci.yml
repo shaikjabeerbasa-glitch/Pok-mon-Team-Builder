@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: pokemon-team-builder
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: pokemon-team-builder/package-lock.json
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint -- --deny-warnings
+
+      - name: Build production bundle
+        run: npm run build
